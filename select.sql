@@ -51,3 +51,8 @@ SELECT SUM(estoque) AS estoqueTotal, id_fornecedor FROM produtos GROUP BY id_for
 SELECT *, (SELECT fornecedores.nome FROM fornecedores WHERE fornecedores.id = produtos.id_fornecedor) as fornecedor FROM produtos;
 -- Essa subquery foi usada entre o SELECT e o FROM, a subquery deve retornar somente um resultado.
 -- Possui uma carga maior de processamento pois faz mais consultas que o normal
+
+SELECT produtos.id, produtos.nome, produtos.preco, produtos.estoque, produtos.miniestoque, fornecedores.nome  FROM produtos INNER JOIN fornecedores ON fornecedores.id = produtos.id_fornecedor;
+-- INNER JOIN vai juntar as duas tabelas, nesse caso junta os fornecedores através do id do fornecedor em produtos
+SELECT produtos.*, fornecedores.nome AS fornecedor FROM produtos INNER JOIN fornecedores ON fornecedores.id = produtos.id_fornecedor;
+
