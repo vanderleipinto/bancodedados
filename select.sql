@@ -15,3 +15,10 @@ SELECT * FROM produtos WHERE estoque BETWEEN 5 AND 10;
 
 SELECT * FROM produtos WHERE id_fornecedor IN (1,6,3);
 -- seleciona baseado em multiplas opções.
+
+-- ORDER BY
+ SELECT * FROM produtos WHERE id_fornecedor IN (1,6,3) ORDER BY estoque ASC;
+--  OBS: a ordem será colocada depois das eventuais condições.
+
+SELECT * FROM produtos ORDER BY minestoque ASC, nome DESC;
+-- Ordena primeiro por miniestoque, depois por nome os que estão empatados.
